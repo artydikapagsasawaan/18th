@@ -1,0 +1,797 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --cream: #f5f0e8;
+    --black: #171717;
+    --orange: #ff633d;
+    --blue: #9ec9ed;
+    --yellow: #f5d65e;
+    --white: #fffdf8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--black);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+
+.topbar {
+    height: 65px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--black);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.brand {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 25px;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.brand span {
+    font-size: 11px;
+    vertical-align: top;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 530px;
+    margin: 20px;
+    background: var(--orange);
+    border: 2px solid var(--black);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    width: 100%;
+    text-align: center;
+    padding: 65px 15px;
+}
+
+.hero-tag {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    border: 2px solid var(--black);
+    background: var(--yellow);
+    padding: 8px 15px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.small-heading {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(42px, 9vw, 105px);
+    line-height: .9;
+    letter-spacing: -5px;
+}
+
+.big-number {
+    display: block;
+    font-size: clamp(110px, 25vw, 220px);
+    color: var(--cream);
+    -webkit-text-stroke: 3px var(--black);
+    line-height: .95;
+    text-shadow: 7px 7px 0 var(--black);
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.circle-sticker {
+    position: absolute;
+    right: 7%;
+    bottom: 12%;
+    width: 95px;
+    height: 95px;
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 17px;
+    transform: rotate(12deg);
+    animation: wobble 3s infinite ease-in-out;
+}
+
+.tape {
+    position: absolute;
+    width: 85px;
+    height: 24px;
+    background: rgba(255,255,255,.5);
+    transform: rotate(-35deg);
+}
+
+.tape-one {
+    top: 0;
+    left: 10%;
+}
+
+.tape-two {
+    bottom: 0;
+    right: 15%;
+    transform: rotate(35deg);
+}
+
+/* SECTIONS */
+
+.intro,
+.countdown-section,
+.details,
+.venue,
+.dresscode,
+.ending {
+    padding: 75px 8%;
+    position: relative;
+    border-bottom: 2px solid var(--black);
+}
+
+.intro {
+    background: var(--cream);
+}
+
+.intro-number,
+.section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.intro h2,
+.countdown-section h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 8vw, 75px);
+    line-height: .95;
+    letter-spacing: -3px;
+}
+
+.intro > p {
+    max-width: 400px;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-top: 25px;
+}
+
+.handwritten {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    color: var(--orange);
+    transform: rotate(-5deg);
+    margin-top: 20px;
+}
+
+/* PHOTOBOOTH */
+
+.photo-frame {
+    background: #151515;
+    padding: 10px;
+    border: 3px solid var(--black);
+    box-shadow: 8px 8px 0 var(--black);
+    position: relative;
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.opening-photo {
+    width: min(175px, 48vw);
+    margin: 15px auto 25px;
+    transform: rotate(5deg);
+    animation: photoFloat 4s ease-in-out infinite;
+}
+
+.main-photo {
+    width: min(230px, 65vw);
+    margin: 45px auto 10px;
+    transform: rotate(-5deg);
+    animation: photoFloat 5s ease-in-out infinite;
+}
+
+.photo-caption {
+    display: block;
+    background: #151515;
+    color: var(--cream);
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 12px 3px 5px;
+}
+
+/* COUNTDOWN */
+
+.countdown-section {
+    background: var(--blue);
+    text-align: center;
+}
+
+.countdown-section h2 {
+    margin-bottom: 35px;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.count-box {
+    background: var(--cream);
+    border: 2px solid var(--black);
+    padding: 20px 5px;
+    box-shadow: 4px 4px 0 var(--black);
+}
+
+.count-box span {
+    display: block;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(27px, 6vw, 55px);
+}
+
+.count-box small {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.countdown-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    margin-top: 30px;
+}
+
+/* DATE */
+
+.date-card {
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    padding: 20px;
+    max-width: 450px;
+    box-shadow: 8px 8px 0 var(--black);
+    transform: rotate(-2deg);
+    margin: 35px auto;
+}
+
+.date-top {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.date-number {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(150px, 35vw, 240px);
+    line-height: 1;
+    text-align: center;
+}
+
+.date-bottom {
+    border-top: 2px solid var(--black);
+    padding-top: 12px;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+}
+
+.time-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 55px;
+}
+
+.info-icon {
+    font-size: 45px;
+}
+
+.time-info small {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+}
+
+.time-info h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 30px;
+}
+
+/* LOCATION */
+
+.venue {
+    background: var(--orange);
+}
+
+.venue-card {
+    background: var(--cream);
+    border: 2px solid var(--black);
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 8px 8px 0 var(--black);
+    position: relative;
+}
+
+.venue-icon {
+    font-size: 45px;
+}
+
+.venue-small {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    margin: 20px 0 10px;
+}
+
+.venue-card h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(50px, 10vw, 85px);
+    line-height: .9;
+}
+
+.venue-description {
+    line-height: 1.8;
+    margin: 25px 0;
+    font-size: 14px;
+}
+
+.location-button {
+    display: inline-block;
+    background: var(--black);
+    color: var(--cream);
+    padding: 15px 25px;
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.location-button:hover {
+    background: var(--orange);
+    color: var(--black);
+    transform: translateY(-4px);
+}
+
+/* DRESS CODE */
+
+.dresscode {
+    background: var(--yellow);
+}
+
+.dress-card {
+    background: var(--blue);
+    border: 2px solid var(--black);
+    padding: 55px 15px;
+    text-align: center;
+    position: relative;
+    box-shadow: 8px 8px 0 var(--black);
+    transform: rotate(1deg);
+}
+
+.dress-card > p {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.dress-card h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(42px, 9vw, 90px);
+    line-height: .95;
+    margin: 25px 0;
+}
+
+.dress-star {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 45px;
+    animation: spin 8s linear infinite;
+}
+
+.dress-bottom {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+}
+
+/* ENDING */
+
+.ending {
+    text-align: center;
+    background: var(--cream);
+    padding: 100px 20px;
+}
+
+.ending-star {
+    font-size: 50px;
+    animation: spin 8s linear infinite;
+}
+
+.ending > p:first-of-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    margin: 20px;
+}
+
+.ending h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(65px, 14vw, 125px);
+    line-height: .85;
+    letter-spacing: -5px;
+}
+
+.ending-note {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.ending-heart {
+    display: block;
+    color: var(--orange);
+    font-size: 65px;
+    margin: 25px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.ending-signature {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+    color: var(--cream);
+    padding: 22px 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+}
+
+/* OPENING SCREEN */
+
+.opening {
+    min-height: 100vh;
+    background: var(--cream);
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    overflow-y: auto;
+    transition: opacity .8s ease, visibility .8s ease;
+}
+
+.opening.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.opening-top {
+    height: 65px;
+    border-bottom: 2px solid var(--black);
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.opening-top span:first-child {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 25px;
+}
+
+.opening-content {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px 20px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.opening-label {
+    display: inline-block;
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    padding: 8px 15px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    transform: rotate(-3deg);
+}
+
+.opening-small {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin: 25px 0 12px;
+}
+
+.opening h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(60px, 14vw, 115px);
+    line-height: .82;
+    letter-spacing: -5px;
+    text-shadow: 4px 4px 0 var(--orange);
+}
+
+.opening h1 span {
+    color: var(--orange);
+}
+
+.open-button {
+    display: block;
+    margin: 35px auto 20px;
+    background: var(--black);
+    color: var(--cream);
+    border: 2px solid var(--black);
+    padding: 17px 30px;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .25s;
+    box-shadow: 5px 5px 0 var(--orange);
+}
+
+.open-button:hover {
+    background: var(--orange);
+    color: var(--black);
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 var(--black);
+}
+
+.opening-footer {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.opening-sticker {
+    position: absolute;
+    font-size: 55px;
+    animation: wobble 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.sticker-star {
+    top: 28%;
+    left: 8%;
+    color: var(--orange);
+}
+
+.sticker-smile {
+    top: 50%;
+    right: 8%;
+    color: var(--blue);
+}
+
+.sticker-heart {
+    bottom: 10%;
+    left: 12%;
+    color: var(--orange);
+}
+
+.hidden {
+    display: none;
+}
+
+.main-invitation {
+    animation: reveal .9s ease both;
+}
+
+/* ANIMATIONS */
+
+@keyframes photoFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes wobble {
+    0%, 100% {
+        transform: rotate(-8deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(8deg) translateY(-8px);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+
+    .topbar {
+        padding: 0 15px;
+        height: 55px;
+    }
+
+    .top-label,
+    .top-right {
+        font-size: 8px;
+    }
+
+    .brand {
+        font-size: 21px;
+    }
+
+    .hero {
+        min-height: 430px;
+        margin: 10px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .circle-sticker {
+        width: 72px;
+        height: 72px;
+        font-size: 13px;
+        right: 5%;
+        bottom: 7%;
+    }
+
+    .hero-bottom {
+        gap: 8px;
+        font-size: 8px;
+    }
+
+    .intro,
+    .countdown-section,
+    .details,
+    .venue,
+    .dresscode {
+        padding: 55px 7%;
+    }
+
+    .countdown {
+        gap: 6px;
+    }
+
+    .count-box {
+        padding: 15px 2px;
+        box-shadow: 3px 3px 0 var(--black);
+    }
+
+    .count-box small {
+        font-size: 7px;
+    }
+
+    .venue-card {
+        padding: 30px 15px;
+    }
+
+    footer {
+        justify-content: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .opening-content {
+        padding-top: 25px;
+    }
+
+    .opening h1 {
+        letter-spacing: -3px;
+    }
+
+    .opening-sticker {
+        font-size: 35px;
+    }
+
+    .sticker-star {
+        left: 3%;
+    }
+
+    .sticker-smile {
+        right: 3%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
